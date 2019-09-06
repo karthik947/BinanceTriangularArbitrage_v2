@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        table#finTable,table#finTable td {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Binance Triangular Arbitrage Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="JS/jQuery 3.2.1.js"></script>
+  </head>
+  <body>
+    <div class="container">
+     <h1>Binance Triangular Arbitrage Scanner</h1>
+     <h3> v2.0 | 20x Faster | 2x Easier | Socket API | Live Updates </h3>
+     <p>This tool analysis all the coins and Binance exchange and provides the list of available arbitrage trade opportunities. click <a href="#">here</a> to watch the video and know more</p>
+
+        <!---->
+        <button type="button" class="btn btn-warning" data-toggle="collapse" data-target="#donate">Buy me a cup of coffee</button>
+        <div id="donate" class="collapse">
+            <br>
+            <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Thank you for your contribution. Happy Trading!!!</h4>
+              <p class="card-text"> from Karthik [Dekay Arts] </p>
+              <p style="" class="card-text">BTC Address: 1BwSbBvx98bqSEHFETnLqEBC7dZqf4yLv4 <br> MEW Address: 0xFC5479343d791eca8EEBB01C488e0a5F460f0453</p>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+           <div class="col-sm-1">
+           </div>
+           <div class="col-sm-9"></div>
+           <div class="col-sm-1" id="runDiv">
+             <button onclick="runToggle();" type="button" class="btn btn-success" id="runFlag">Toggle</button>
+           </div>
+        </div>
+        <br>
+        <!---->
+       <div id="tartbit" class=" container row">
+          <table id="finTable" class="table table-bordered table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>#S.No</th>
+              <th>Sequence</th>
+              <th>Profit%</th>
+            </tr>
+          </thead>
+          <tbody id="tartbitBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="JS/index.js"></script>
+</html>
