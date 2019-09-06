@@ -15,5 +15,18 @@ Thank you for your contribution. Happy Trading!!!
 * BTC Address: 1BwSbBvx98bqSEHFETnLqEBC7dZqf4yLv4
 * MEW Address: 0xFC5479343d791eca8EEBB01C488e0a5F460f0453
 
+### How to run ?
+Follow the instructions below. 
+* Install Node JS [link](https://nodejs.org/en/)
+* Download and unzip this package.
+* Go to the current folder on command promt and run below command
+```bash
+node index.js
+```
+* Wait until the program loads
+* Then go to "http://127.0.0.1:3000/" url to access
+
+Still confused ? click [here](https://www.youtube.com/channel/UCVbm47TKsSep79NFPpBdzTw) watch the youtube video.
+
 ## Creator
 [Dekay Arts](https://www.youtube.com/channel/UCVbm47TKsSep79NFPpBdzTw)
