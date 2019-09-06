@@ -28,5 +28,8 @@ node index.js
 
 Still confused ? click [here](https://www.youtube.com/channel/UCVbm47TKsSep79NFPpBdzTw) watch the youtube video.
 
+### Disclaimer:
+I am not a financial advisor nor is any content in this article presented as financial advice. The information provided in this post or any other posts that I make and any accompanying material is for educational purposes only. It should not be considered financial or investment advice of any kind. Use these tools at your own risk.
+
 ## Creator
 [Dekay Arts](https://www.youtube.com/channel/UCVbm47TKsSep79NFPpBdzTw)
