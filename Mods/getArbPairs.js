@@ -1,1 +1,179 @@
-var _0x1cb5=['<br/>','[\x27askP\x27][\x27','lv2','value','toFixed','sockets','emit','ARBITRAGE','filter','desc','exports','binance','socket.io','express','BinanceRest','api-secret','exchangeInfo','then','symbols','forEach','indexOf','baseAsset','push','quoteAsset','status','TRADING','symbol','num','den','length','catch','log','listen','Arbitrage\x20Bot\x20has\x20just\x20started\x20on\x20port\x203000.\x20Please\x20wait.....','use','/JS','static','join','../Pages/JS','sendFile','../Pages/index.html','get','onAllTickers','bidPrice','bestBid','askPrice','bestAskPrice','lv1','lv3','[\x27bidP\x27][\x27'];(function(_0x330571,_0x4dcce4){var _0xcc3dcd=function(_0x53e516){while(--_0x53e516){_0x330571['push'](_0x330571['shift']());}};_0xcc3dcd(++_0x4dcce4);}(_0x1cb5,0x105));var _0x3b2e=function(_0x205c10,_0x323dd1){_0x205c10=_0x205c10-0x0;var _0x3b749b=_0x1cb5[_0x205c10];return _0x3b749b;};const api=require(_0x3b2e('0x0'));const socket=require(_0x3b2e('0x1'));const express=require(_0x3b2e('0x2'));const cors=require('cors');const sort=require('fast-sort');const path=require('path');let app,server,io;let pairs=[],symValJ={};let triangle={'getPairs':()=>{return new Promise((_0x198a3f,_0x5c6cf0)=>{const _0x149b2b=new api[(_0x3b2e('0x3'))]({'key':'api-key','secret':_0x3b2e('0x4'),'timeout':0x3a98,'recvWindow':0x2710,'disableBeautification':![],'handleDrift':!![]});_0x149b2b[_0x3b2e('0x5')]()[_0x3b2e('0x6')](_0x587cb7=>{let _0x44c714=[],_0xa605e0=[];_0x587cb7[_0x3b2e('0x7')][_0x3b2e('0x8')](_0x4a99fd=>{if(_0x44c714[_0x3b2e('0x9')](_0x4a99fd[_0x3b2e('0xa')])===-0x1){_0x44c714[_0x3b2e('0xb')](_0x4a99fd[_0x3b2e('0xa')]);}if(_0x44c714[_0x3b2e('0x9')](_0x4a99fd[_0x3b2e('0xc')])===-0x1){_0x44c714['push'](_0x4a99fd[_0x3b2e('0xc')]);}if(_0x4a99fd[_0x3b2e('0xd')]===_0x3b2e('0xe')){_0xa605e0[_0x3b2e('0xb')](_0x4a99fd[_0x3b2e('0xf')]);symValJ[_0x4a99fd[_0x3b2e('0xf')]]={'bidPrice':0x0,'askPrice':0x0};}});let _0x436059=_0x44c714,_0x29a9df=_0x44c714,_0x25f066=_0x44c714;_0x436059['forEach'](_0x1c3a1b=>{_0x29a9df['forEach'](_0x26385e=>{_0x25f066[_0x3b2e('0x8')](_0x38dc1b=>{if(!(_0x1c3a1b==_0x26385e||_0x26385e==_0x38dc1b||_0x38dc1b==_0x1c3a1b)){let _0x1ccb60=[],_0x1bf15a=[],_0x3cd910=[],_0x4f6d18='',_0x524998='',_0x3bc956='';if(_0xa605e0[_0x3b2e('0x9')](_0x1c3a1b+_0x26385e)!=-0x1){_0x1ccb60[_0x3b2e('0xb')](_0x1c3a1b+_0x26385e);_0x4f6d18=_0x3b2e('0x10');}if(_0xa605e0['indexOf'](_0x26385e+_0x1c3a1b)!=-0x1){_0x1ccb60[_0x3b2e('0xb')](_0x26385e+_0x1c3a1b);_0x4f6d18=_0x3b2e('0x11');}if(_0xa605e0[_0x3b2e('0x9')](_0x26385e+_0x38dc1b)!=-0x1){_0x1bf15a[_0x3b2e('0xb')](_0x26385e+_0x38dc1b);_0x524998=_0x3b2e('0x10');}if(_0xa605e0[_0x3b2e('0x9')](_0x38dc1b+_0x26385e)!=-0x1){_0x1bf15a[_0x3b2e('0xb')](_0x38dc1b+_0x26385e);_0x524998='den';}if(_0xa605e0['indexOf'](_0x38dc1b+_0x1c3a1b)!=-0x1){_0x3cd910[_0x3b2e('0xb')](_0x38dc1b+_0x1c3a1b);_0x3bc956=_0x3b2e('0x10');}if(_0xa605e0[_0x3b2e('0x9')](_0x1c3a1b+_0x38dc1b)!=-0x1){_0x3cd910[_0x3b2e('0xb')](_0x1c3a1b+_0x38dc1b);_0x3bc956=_0x3b2e('0x11');}if(_0x1ccb60[_0x3b2e('0x12')]&&_0x1bf15a['length']&&_0x3cd910[_0x3b2e('0x12')]){pairs['push']({'l1':_0x4f6d18,'l2':_0x524998,'l3':_0x3bc956,'d1':_0x1c3a1b,'d2':_0x26385e,'d3':_0x38dc1b,'lv1':_0x1ccb60[0x0],'lv2':_0x1bf15a[0x0],'lv3':_0x3cd910[0x0],'value':-0x64,'tpath':''});}}});});});_0x198a3f();})[_0x3b2e('0x13')](_0x1efd8c=>{console[_0x3b2e('0x14')](_0x1efd8c);});});},'startServer':()=>{return new Promise((_0x376a86,_0x2ae1f8)=>{app=express();server=app[_0x3b2e('0x15')](0xbb8,()=>{console[_0x3b2e('0x14')](_0x3b2e('0x16'));});app[_0x3b2e('0x17')](cors());app[_0x3b2e('0x17')](_0x3b2e('0x18'),express[_0x3b2e('0x19')](path[_0x3b2e('0x1a')](__dirname,_0x3b2e('0x1b'))));let _0x19db62=(_0x2ac4a6,_0x376a86)=>{_0x376a86[_0x3b2e('0x1c')](path[_0x3b2e('0x1a')](__dirname,_0x3b2e('0x1d')));};app[_0x3b2e('0x1e')]('/',_0x19db62);io=socket(server);_0x376a86();});},'calculate':()=>{console[_0x3b2e('0x14')]('Finished\x20SetUp.\x20Open\x20\x22http://127.0.0.1:3000/\x22\x20in\x20your\x20browser\x20to\x20access.\x20Happy\x20Trading!!');let _0x268536=new api['BinanceWS']();_0x268536[_0x3b2e('0x1f')](_0x321d3a=>{_0x321d3a[_0x3b2e('0x8')](_0x36dce3=>{symValJ[_0x36dce3[_0x3b2e('0xf')]][_0x3b2e('0x20')]=parseFloat(_0x36dce3[_0x3b2e('0x21')]);symValJ[_0x36dce3[_0x3b2e('0xf')]][_0x3b2e('0x22')]=parseFloat(_0x36dce3[_0x3b2e('0x23')]);});pairs[_0x3b2e('0x8')](_0x1b7ed1=>{if(symValJ[_0x1b7ed1[_0x3b2e('0x24')]]['bidPrice']&&symValJ[_0x1b7ed1['lv2']][_0x3b2e('0x20')]&&symValJ[_0x1b7ed1[_0x3b2e('0x25')]][_0x3b2e('0x20')]){let _0x42a9dc,_0x520668;if(_0x1b7ed1['l1']===_0x3b2e('0x10')){_0x42a9dc=symValJ[_0x1b7ed1[_0x3b2e('0x24')]]['bidPrice'];_0x520668=_0x1b7ed1['d1']+'->'+_0x1b7ed1['lv1']+_0x3b2e('0x26')+symValJ[_0x1b7ed1[_0x3b2e('0x24')]][_0x3b2e('0x20')]+'\x27]'+'->'+_0x1b7ed1['d2']+_0x3b2e('0x27');}else{_0x42a9dc=0x1/symValJ[_0x1b7ed1[_0x3b2e('0x24')]][_0x3b2e('0x22')];_0x520668=_0x1b7ed1['d1']+'->'+_0x1b7ed1['lv1']+_0x3b2e('0x28')+symValJ[_0x1b7ed1[_0x3b2e('0x24')]][_0x3b2e('0x22')]+'\x27]'+'->'+_0x1b7ed1['d2']+_0x3b2e('0x27');}if(_0x1b7ed1['l2']===_0x3b2e('0x10')){_0x42a9dc*=symValJ[_0x1b7ed1[_0x3b2e('0x29')]][_0x3b2e('0x20')];_0x520668+=_0x1b7ed1['d2']+'->'+_0x1b7ed1['lv2']+'[\x27bidP\x27][\x27'+symValJ[_0x1b7ed1[_0x3b2e('0x29')]][_0x3b2e('0x20')]+'\x27]'+'->'+_0x1b7ed1['d3']+'<br/>';}else{_0x42a9dc*=0x1/symValJ[_0x1b7ed1[_0x3b2e('0x29')]]['askPrice'];_0x520668+=_0x1b7ed1['d2']+'->'+_0x1b7ed1[_0x3b2e('0x29')]+_0x3b2e('0x28')+symValJ[_0x1b7ed1['lv2']]['askPrice']+'\x27]'+'->'+_0x1b7ed1['d3']+_0x3b2e('0x27');}if(_0x1b7ed1['l3']===_0x3b2e('0x10')){_0x42a9dc*=symValJ[_0x1b7ed1[_0x3b2e('0x25')]][_0x3b2e('0x20')];_0x520668+=_0x1b7ed1['d3']+'->'+_0x1b7ed1['lv3']+'[\x27bidP\x27][\x27'+symValJ[_0x1b7ed1[_0x3b2e('0x25')]][_0x3b2e('0x20')]+'\x27]'+'->'+_0x1b7ed1['d1'];}else{_0x42a9dc*=0x1/symValJ[_0x1b7ed1['lv3']][_0x3b2e('0x22')];_0x520668+=_0x1b7ed1['d3']+'->'+_0x1b7ed1[_0x3b2e('0x25')]+_0x3b2e('0x28')+symValJ[_0x1b7ed1[_0x3b2e('0x25')]]['askPrice']+'\x27]'+'->'+_0x1b7ed1['d1'];}_0x1b7ed1['tpath']=_0x520668;_0x1b7ed1[_0x3b2e('0x2a')]=parseFloat(parseFloat((_0x42a9dc-0x1)*0x64)[_0x3b2e('0x2b')](0x3));}});io[_0x3b2e('0x2c')][_0x3b2e('0x2d')](_0x3b2e('0x2e'),sort(pairs[_0x3b2e('0x2f')](_0x1037cc=>_0x1037cc[_0x3b2e('0x2a')]>0x0))[_0x3b2e('0x30')](_0x22fb57=>_0x22fb57[_0x3b2e('0x2a')]));});},'log':()=>{return pairs[_0x3b2e('0x12')];}};module[_0x3b2e('0x31')]=triangle;
+//this module returns atrbitragable pairs
+//Local Modules
+const api = require('binance');
+const socket = require('socket.io');
+const express = require('express');
+const cors = require('cors');
+const sort = require('fast-sort');
+const path = require('path');
+let app,server,io;
+
+//LOCAL ITEMS
+let pairs = [],symValJ={};
+
+
+//RETURNING ITEMS
+let triangle = {
+  //pairs:[],//{1:BTC,2:ETH,3:XRP,value:}
+  getPairs: () => {
+    return new Promise((res,rej) => {
+        const bRest = new api.BinanceRest({
+            key: 'api-key', // Get this from your account on binance.com
+            secret: 'api-secret', // Same for this
+            timeout: 15000, // Optional, defaults to 15000, is the request time out in milliseconds
+            recvWindow: 10000, // Optional, defaults to 5000, increase if you're getting timestamp errors
+            disableBeautification: false,
+            handleDrift: true
+        });
+
+        bRest.exchangeInfo()
+        .then((r1) => {
+          let symbols=[],validPairs=[];
+          r1.symbols.forEach(d => {
+            if(symbols.indexOf(d.baseAsset) === -1){symbols.push(d.baseAsset);}
+            if(symbols.indexOf(d.quoteAsset) === -1){symbols.push(d.quoteAsset);}
+            if(d.status === "TRADING"){validPairs.push(d.symbol);symValJ[d.symbol]={bidPrice:0,askPrice:0}}
+          });
+
+          //find arbitragable coins
+          let s1 = symbols,s2=symbols,s3=symbols;
+          //let s1 = [],s2=[],s3=[];
+          s1.forEach(d1 => {
+            s2.forEach(d2 => {
+              s3.forEach(d3 => {
+                if(!(d1 == d2 || d2 == d3 || d3 == d1)){
+                  let lv1=[],lv2=[],lv3=[],l1='',l2='',l3='';
+                  if(validPairs.indexOf(d1+d2) != -1){
+                    lv1.push(d1+d2);
+                    l1='num';
+                  }
+                  if(validPairs.indexOf(d2+d1) != -1){
+                    lv1.push(d2+d1);
+                    l1='den';
+                  }
+
+                  if(validPairs.indexOf(d2+d3) != -1){
+                    lv2.push(d2+d3);
+                    l2 = 'num';
+                  }
+                  if(validPairs.indexOf(d3+d2) != -1){
+                    lv2.push(d3+d2);
+                    l2 = 'den';
+                  }
+
+                  if(validPairs.indexOf(d3+d1) != -1){
+                    lv3.push(d3+d1);
+                    l3='num';
+                  }
+                  if(validPairs.indexOf(d1+d3) != -1){
+                    lv3.push(d1+d3);
+                    l3='den';
+                  }
+
+
+                  if(lv1.length && lv2.length && lv3.length){
+                    pairs.push({
+                      l1:l1,
+                      l2:l2,
+                      l3:l3,
+                      d1:d1,
+                      d2:d2,
+                      d3:d3,
+                      lv1:lv1[0],
+                      lv2:lv2[0],
+                      lv3:lv3[0],
+                      value:-100,
+                      tpath:''
+                    });
+                  }
+
+                }
+              });
+            });
+          });
+          //console.log(pairs.length + ',' + symbols.length + ',' + validPairs.length );
+          res();
+
+        }).catch(err => {
+          console.log(err);
+        });
+    })
+  },
+  startServer : () => {
+    return new Promise((res,rej) => {
+      app = express();
+      server = app.listen(3000,() => {console.log('Arbitrage Bot has just started on port 3000. Please wait.....');});
+      app.use(cors());
+      app.use('/JS',express.static(path.join(__dirname,'../Pages/JS')))
+      let renderPage = (req,res) => {
+        res.sendFile(path.join(__dirname,"../Pages/index.html"));
+      };
+      app.get('/',renderPage);
+      io = socket(server);
+      res();
+    });
+  },
+  calculate: () => {
+    console.log('Finished SetUp. Open "http://127.0.0.1:3000/" in your browser to access. Happy Trading!!');
+    let binanceWS = new api.BinanceWS();
+    binanceWS.onAllTickers((data) => {
+      //Update JSON
+      data.forEach(d => {
+        symValJ[d.symbol].bidPrice = parseFloat(d.bestBid);
+        symValJ[d.symbol].askPrice = parseFloat(d.bestAskPrice);
+      });
+      //Perform calculation and send alerts
+      pairs.forEach(d => {
+        //continue if price is not updated for any symbol
+        if(symValJ[d.lv1]["bidPrice"] && symValJ[d.lv2]["bidPrice"] && symValJ[d.lv3]["bidPrice"]){
+            //Level 1 calculation
+            let lv_calc,lv_str;
+            if(d.l1 === 'num'){
+              lv_calc = symValJ[d.lv1]["bidPrice"];
+              lv_str = d.d1 +  '->' + d.lv1 + "['bidP']['" + symValJ[d.lv1]["bidPrice"] + "']" + '->' + d.d2 + '<br/>';
+            }
+            else{
+              lv_calc = 1/symValJ[d.lv1]["askPrice"];
+              lv_str = d.d1 +  '->' + d.lv1 + "['askP']['" + symValJ[d.lv1]["askPrice"] + "']" + '->' + d.d2 + '<br/>';
+            }
+
+            //Level 2 calculation
+            if(d.l2 === 'num'){
+                lv_calc *= symValJ[d.lv2]["bidPrice"];
+                lv_str  += d.d2 +  '->' + d.lv2 + "['bidP']['" + symValJ[d.lv2]["bidPrice"] + "']" +  '->' + d.d3+ '<br/>';
+              }
+            else{
+                lv_calc *= 1/symValJ[d.lv2]["askPrice"];
+                lv_str  += d.d2 +  '->' + d.lv2 + "['askP']['" + symValJ[d.lv2]["askPrice"] + "']" +  '->' + d.d3 + '<br/>';
+            }
+
+            //Level 3 calculation
+            if(d.l3 === 'num'){
+                lv_calc *= symValJ[d.lv3]["bidPrice"];
+                lv_str  += d.d3 +  '->' + d.lv3 + "['bidP']['" + symValJ[d.lv3]["bidPrice"] + "']" + '->' +  d.d1 ;
+              }
+            else{
+                lv_calc *= 1/symValJ[d.lv3]["askPrice"];
+                lv_str += d.d3 +  '->' + d.lv3 + "['askP']['" + symValJ[d.lv3]["askPrice"] + "']" + '->' +  d.d1;
+            }
+
+            d.tpath = lv_str;
+            d.value = parseFloat(parseFloat((lv_calc - 1)*100).toFixed(3));
+        }
+      });
+
+      //Send Socket
+      io.sockets.emit("ARBITRAGE",sort(pairs.filter(d => d.value > 0)).desc(u => u.value));
+    });
+  },
+  log: () => {
+    return pairs.length;
+  }
+}
+
+//PROCEDURE
+//GET ALL SYMBOLS AND IDENTIFY ARBITRAGABLE COINS
+//OPEN SOCKET FOR 24 HOURS STATS
+//CALCULATE AND SEND THE BEST ARB OPPORTUNITIES EVERY SEC
+
+module.exports = triangle;
