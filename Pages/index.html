@@ -11,6 +11,11 @@
             border-collapse: collapse;
             border: 1px solid black;
         }
+        .stlabel {
+          font-size: 15px;
+          font-style: italic;
+          font-weight: bold;
+        }
     </style>
     <meta charset="utf-8">
     <title>Binance Triangular Arbitrage Finder</title>
@@ -42,11 +47,15 @@
         </div>
         <br>
         <div class="row">
-           <div class="col-sm-1">
+           <div class="col-sm-7">
+               <!-- <label class="stlabel">Show Trades above </label>
+               <input type="number" name="minLimit" value=""> -->
            </div>
-           <div class="col-sm-9"></div>
-           <div class="col-sm-1" id="runDiv">
-             <button onclick="runToggle();" type="button" class="btn btn-success" id="runFlag">Toggle</button>
+           <div class="col-sm-2" id="runDiv">
+             <div class="row justify-content-end">
+               <button onclick="runToggle();" type="button" class="btn btn-success" id="runFlag">Toggle</button>&nbsp;&nbsp;
+               <input onchange="minLimit(this.value);" data-toggle="tooltip" data-placement="top" title="Minimum Profit Percent" class="col-sm-5" type="number" name="minLimit" value=0>
+             </div>
            </div>
         </div>
         <br>
