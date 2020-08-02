@@ -9,12 +9,6 @@ This is the new version of Binance Triangular Arbitrage Finder.
 * Runs Live
 * Simplified Interface
 
-### Contributions
-Thank you for your contribution. Happy Trading!!!
-
-* BTC Address: 1BwSbBvx98bqSEHFETnLqEBC7dZqf4yLv4
-* MEW Address: 0xFC5479343d791eca8EEBB01C488e0a5F460f0453
-
 ### How to run ?
 Follow the instructions below. 
 * Install Node JS [link](https://nodejs.org/en/)
