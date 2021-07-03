@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family:Roboto
+        }
+        body {
+          margin: 1rem 10rem;
+        }
+        header h1 {
+          font-weight: 400;
+          font-size: 3rem;
+        }
+        header h3 {
+          font-weight: 400;
+          font-size: 1.5rem;
+        }
+        header p {
+          font-weight: 300;
+          font-size: 1rem;
+        }
+        table {
+          margin-top: 2rem;
+        }
+        table tr th {
+          background: #111;
+          color: white;
+          padding: 0.25rem 3rem;
+        }
+        table tr td {
+          padding: 0.25rem 3rem;
+          background: #b6fcc0
+        }
+    </style>
+    <link rel="shortcut icon" href="JS/nerdfavicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <title>Binance Triangular Arbitrage Finder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Binance Triangular Arbitrage Scanner</h1>
+      <h3> v2.0 | 20x Faster | 2x Easier | Socket API | Live Updates </h3>
+      <p>This tool analysis all the coins and Binance exchange and provides the list of available arbitrage trade opportunities. click <a target="_blank" href="https://www.youtube.com/watch?v=Rlx8LjHo9Jc">here</a> to watch the video and know more</p> 
+    </header>
+    <table id="finTable" class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>#S.No</th>
+          <th>Sequence</th>
+          <th>Profit%</th>
+        </tr>
+      </thead>
+      <tbody id="tartbitBody">
+      </tbody>
+    </table>
+    <script src="JS/index.js"></script>
+  </body>
+</html>
